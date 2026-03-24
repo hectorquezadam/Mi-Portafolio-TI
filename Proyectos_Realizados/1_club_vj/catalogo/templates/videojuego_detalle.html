@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="bg-dark text-light min-vh-100 py-5" style="background: radial-gradient(circle at top, #1e1e1e 0%, #121212 100%);">
+    
+    <div class="container">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-warning mb-0">Bienvenid@s al Club V.J. 🎮</h1>
+            <p class="text-primary fs-4 mt-2">Explorando: {{ detalle_vj.titulo }}</p>
+            <hr class="mx-auto border-primary" style="width: 60px; height: 4px; opacity: 1;">
+        </div>
+
+        <div class="card bg-dark border-secondary shadow-lg mx-auto overflow-hidden" 
+             style="max-width: 95%; border-radius: 25px; backdrop-filter: blur(10px); background-color: rgba(30, 30, 30, 0.8) !important;">
+            
+            <div class="row g-0">
+                <div class="col-md-4 p-4 d-flex align-items-center justify-content-center bg-black bg-opacity-25">
+                    <img src="{% static 'img/'|add:detalle_vj.imagen %}" 
+                         class="img-fluid rounded-4 shadow-lg game-poster" 
+                         alt="{{ detalle_vj.titulo }}"
+                         style="max-height: 450px; transition: transform 0.3s ease;">
+                </div>
+
+                <div class="col-md-5 p-4 d-flex flex-column justify-content-center">
+                    <div class="card-body">
+                        <h2 class="card-title text-warning fw-bold mb-4 display-6">{{ detalle_vj.titulo }}</h2>
+                        
+                        <div class="mb-4">
+                            <span class="badge bg-primary px-3 py-2 rounded-pill me-2">Año: {{ detalle_vj.annio }}</span>
+                            <span class="badge bg-outline-info border border-info text-info px-3 py-2 rounded-pill">
+                                <i class="bi bi-tag-fill me-1"></i> Género: {{ detalle_vj.genero.nombre }}
+                            </span>
+                        </div>
+
+                        <p class="card-text text-secondary fs-5 lh-lg" style="text-align: justify;">
+                            {{ detalle_vj.descripcion }}
+                        </p>
+
+                        <div class="mt-4 p-3 rounded-3 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
+                            <p class="mb-0 small text-muted">
+                                <i class="bi bi-info-circle me-2"></i> Este contenido es parte del catálogo exclusivo de <strong>Club V.J.</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 p-4 d-flex flex-column align-items-center justify-content-center bg-black bg-opacity-25">
+                    <div class="text-center">
+                        <p class="text-muted small text-uppercase fw-bold mb-3">Plataforma</p>
+                        <img src="{% static 'img/'|add:detalle_vj.plataforma.imagen %}" 
+                             class="img-fluid mb-4 platform-logo" 
+                             alt="{{ detalle_vj.plataforma.nombre }}"
+                             style="max-width: 150px; filter: drop-shadow(0 0 10px rgba(13, 110, 253, 0.5));">
+                        
+                        <h4 class="text-white mb-4">{{ detalle_vj.plataforma.nombre }}</h4>
+                        
+                        <div class="d-grid gap-2 w-100">
+                            <button class="btn btn-warning fw-bold btn-lg shadow-sm">
+                                <i class="bi bi-play-circle-fill me-2"></i> JUGAR AHORA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{% url 'videojuegos' %}" class="btn btn-outline-secondary rounded-pill px-4 py-2 hover-link">
+                <i class="bi bi-arrow-left me-2"></i> Volver al Catálogo
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Efecto para la imagen de portada */
+    .game-poster:hover {
+        transform: scale(1.03) rotate(1deg);
+    }
+
+    /* Animación para el logo de plataforma */
+    .platform-logo {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    /* Estilos del botón volver */
+    .hover-link:hover {
+        background-color: #6c757d;
+        color: white !important;
+        transform: translateX(-5px);
+    }
+
+    /* Animación START (mantenida por consistencia) */
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+    .presionar-start {
+        animation: blink 2.5s infinite;
+    }
+</style>
+{% endblock %}
+
+
