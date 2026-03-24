@@ -1,10 +1,18 @@
-# 🎫 Sistema de Tickets de Soporte
-Aplicación funcional para la gestión y control de incidencias técnicas en un entorno empresarial.
+# 🎫 Sistema de Gestión de Tickets - Soporte Empresa
+**Ejercicio de Aplicación: CRUD con Class-Based Views**
 
-### 🛠️ Tecnologías Aplicadas
-- **Framework:** Django (Uso de Class-Based Views - CBVs).
-- **Interfaz:** Plantillas dinámicas con etiquetas de Django y Bootstrap.
+Este sistema permite a una organización centralizar las incidencias técnicas, permitiendo un seguimiento ordenado desde la creación del ticket hasta su resolución.
 
-### 🚀 Funcionalidades
-- **Ciclo CRUD Completo:** Crear, visualizar, editar y eliminar tickets de soporte.
-- **Gestión de Estados:** Control de prioridad y estado de la incidencia (Abierto/En Proceso/Cerrado).
+---
+
+## 🛠️ Tecnologías y Herramientas
+- **Backend:** ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white) ![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django&logoColor=white)
+- **Frontend:** ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![Bootstrap](https://img.shields.io/badge/-Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
+- **Herramientas:** ![Git](https://img.shields.io/badge/-Git-F05033?style=flat&logo=git&logoColor=white)
+
+---
+
+## 🌟 Funcionalidades
+- **CRUD Completo:** Implementación de `ListView`, `CreateView`, `UpdateView` y `DeleteView` para un flujo de trabajo profesional.
+- **Control de Estados:** Gestión de prioridades y estados (Abierto, En proceso, Finalizado).
+- **Interfaz Intuitiva:** Formularios estilizados con Bootstrap y validación de datos en el servidor.
